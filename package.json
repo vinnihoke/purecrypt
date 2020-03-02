@@ -1,6 +1,6 @@
 {
   "name": "purecrypt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " Ultra light encryption and decryption package for Node.js",
   "main": "index.js",
   "scripts": {
