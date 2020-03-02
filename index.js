@@ -32,4 +32,6 @@ function decrypt(value) {
 	return decrypted
 }
 
+console.log(encrypt('test'))
+
 module.exports = { encrypt, decrypt }
