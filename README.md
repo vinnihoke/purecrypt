@@ -1,5 +1,5 @@
 # purecrypt
-Ultra light encryption and decryption package.
+Ultralight encryption and decryption package.
 
 ## Description
 
