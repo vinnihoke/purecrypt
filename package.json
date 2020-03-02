@@ -1,0 +1,27 @@
+{
+  "name": "purecrypt",
+  "version": "1.0.0",
+  "description": " Ultra light encryption and decryption package for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinnihoke/purecrypt.git"
+  },
+  "keywords": [
+    "crypt",
+    "cryptography",
+    "crypto"
+  ],
+  "author": "Vinni Hoke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinnihoke/purecrypt/issues"
+  },
+  "homepage": "https://github.com/vinnihoke/purecrypt#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
