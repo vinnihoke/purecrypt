@@ -1,5 +1,5 @@
 # purecrypt
-Ultralight encryption and decryption package.
+Ultralight string encryption and decryption package.
 
 ## Description
 
@@ -14,7 +14,7 @@ Set up your .env...
 CRYPTO_KEY=Super secret key
 
 // See supported ciphers below
-ALGO=aes-192-cbc
+ALGO=aes-256-cbc
 
 ```
 
@@ -30,7 +30,7 @@ let encryptedSample = purecrypt.encrypt('example');
 
 ```
 
-Decrypt any previously encrypted string...
+Decrypt any previously encrypted string... Note: CRYPTO_KEY and ALGO in .env must match what was used to encrypt the string.
 
 ```
 purecrypt.decrypt(encryptedSample)
