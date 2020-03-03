@@ -1,8 +1,9 @@
 require('dotenv').config()
 const crypto = require('crypto');
 
-const key = crypto.scryptSync(process.env.CRYPTO_KEY, 'salt', Number(process.env.SALT_VALUE));
-const iv = Buffer.alloc(16, 0)
+const key = crypto.createHash('sha256').update(String(process.env.CRYPTO_KEY)).digest('base64').substr(0, 32);
+
+const iv = Buffer.from(process.env.CRYPTO_KEY, "base64").toString('hex').slice(0, 16)
 
 function encrypt(value) {
 	let crypted = ''
@@ -31,7 +32,5 @@ function decrypt(value) {
 	decipher.end()
 	return decrypted
 }
-
-console.log(encrypt('test'))
 
 module.exports = { encrypt, decrypt }
