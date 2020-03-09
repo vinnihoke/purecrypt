@@ -33,6 +33,7 @@ function decrypt(value) {
 		if (value === null) throw new Error("Input value is null");
 		if (value === '') throw new Error("Input value is an empty string");
 		if (typeof (value) !== 'string') throw new Error("Input value must be a string");
+
 		let decrypted = ''
 		const decipher = crypto.createDecipheriv(process.env.ALGO, key, iv)
 		decipher.on('readable', () => {
@@ -50,4 +51,22 @@ function decrypt(value) {
 	}
 }
 
-module.exports = { encrypt, decrypt }
+function validate(existing, incoming) {
+	try {
+		if (existing === undefined || incoming === undefined) throw new Error("Received undefined");
+		if (existing === null || incoming === null) throw new Error("Received null");
+		if (existing === '' || incoming === '') throw new Error("Received an empty string");
+		if (typeof (existing) !== 'string' || typeof (incoming) !== 'string') throw new Error("Input values must be a string");
+
+		const encrypted = encrypt(incoming)
+		if (existing === encrypted) {
+			return true
+		} else {
+			return false
+		}
+	} catch (e) {
+		console.log(e.message)
+	}
+}
+
+module.exports = { encrypt, decrypt, validate }

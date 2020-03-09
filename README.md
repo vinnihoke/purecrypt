@@ -1,9 +1,9 @@
 # purecrypt
-Ultralight string encryption and decryption package.
+Ultralight string encryption, decryption, and validation package.
 
 ## Description
 
-Use Purecrypt to quickly encrypt, or decrypt any string on your Node.js project. 
+Use Purecrypt to quickly encrypt, decrypt, or validate any string on your Node.js project. 
 
 ## How to Use
 
@@ -34,6 +34,24 @@ Decrypt any previously encrypted string... Note: CRYPTO_KEY and ALGO in .env mus
 
 ```
 purecrypt.decrypt(encryptedSample)
+```
+
+Validate any previously encrypted string with an incoming string. Useful for password validation. Accepts existing encrypted string, then incoming string to validate.
+
+```
+router.post('login', async (req, res) => {
+  let { username, password } = req.body;
+  try {
+    const user = await Users.findBy({ username });
+    if ( user && purecrypt.validate(user.password, password) ){
+      ...
+    } else {
+      ...
+    }
+  } catch(e) {
+    res.status(500).json({ error: e.message })
+  }
+})
 ```
 
 ## Ciphers Supported
