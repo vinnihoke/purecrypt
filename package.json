@@ -1,7 +1,7 @@
 {
   "name": "purecrypt",
-  "version": "1.0.5",
-  "description": "Ultralight string encryption and decryption package for Node.js",
+  "version": "1.0.6",
+  "description": "Ultralight string encryption, decryption and validation package for Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,10 +16,11 @@
     "crypto",
     "encryption",
     "decryption",
+    "validation",
     "purecrypt"
   ],
   "author": "Vinni Hoke",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vinnihoke/purecrypt/issues"
   },
