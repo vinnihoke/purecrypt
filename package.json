@@ -17,7 +17,11 @@
     "encryption",
     "decryption",
     "validation",
-    "purecrypt"
+    "purecrypt",
+    "validate",
+    "security",
+    "password",
+    "node.js"
   ],
   "author": "Vinni Hoke",
   "license": "MIT",
